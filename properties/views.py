@@ -1,6 +1,13 @@
 from django.shortcuts import render
+from .models import Properties
 
 # Create your views here.
 
 def index(request):
-    return render(request, template_name='properties/index.html')
+    pr = Properties.objects.all()
+
+    context = {
+        'properties': pr
+    }
+
+    return render(request, 'properties/index.html', context)

@@ -1,3 +1,4 @@
+{% load static %}
   <div class="sub-header">
     <div class="container">
       <div class="row">
@@ -25,13 +26,13 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="{% url 'index' %}" class="logo">
                         <h1>Villa</h1>
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="index.html" class="active">Home</a></li>
+                      <li><a href="{% url 'index' %}" class="active">Home</a></li>
                       <li><a href="properties.html">Properties</a></li>
                       <li><a href="property-details.html">Property Details</a></li>
                       <li><a href="contact.html">Contact Us</a></li>
