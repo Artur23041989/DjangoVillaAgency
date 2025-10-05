@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .models import Properties
+from .models import Property
 
 # Create your views here.
 
 def index(request):
-    pr = Properties.objects.all()
+    pr = Property.objects.all()
 
     context = {
         'properties': pr
