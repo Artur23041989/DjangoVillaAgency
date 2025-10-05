@@ -271,22 +271,22 @@
       </div>
       <div class="row">
 
-        {% for p in properties %}
+        {% for property in properties %}
 
         <div class="col-lg-4 col-md-6">
 
           <div class="item">
-            <a href="property-details.html"><img src="{{ p.image.url }}" alt=""></a>
-            <span class="category">{{ p.category }}</span>
-            <h6>$ {{ p.price }}</h6>
-            <h4><a href="property-details.html">{{ p.details }}</a></h4>
+            <a href="property-details.html"><img src="{{ property.image.url }}" alt=""></a>
+            <span class="category">{{ property.category }}</span>
+            <h6>$ {{ property.price }}</h6>
+            <h4><a href="property-details.html">{{ property.title }}</a></h4>
             <ul>
-              <li>Bedrooms: <span>{{ p.bedrooms }}</span></li>
-              <li>Bathrooms: <span>{{ p.bathrooms }}</span></li>
-              <li>Area: <span>{{ p.area }} m2</span></li>
-              <li>Floor: <span>{{ p.floor }}</span></li>
-              <li>Parking: <span>{{ p.parking }} spots</span></li>
-              <li>Created: <span>{{ p.created }}</span></li>
+              <li>Bedrooms: <span>{{ property.bedrooms }}</span></li>
+              <li>Bathrooms: <span>{{ property.bathrooms }}</span></li>
+              <li>Area: <span>{{ property.area }} m2</span></li>
+              <li>Floor: <span>{{ property.floor }}</span></li>
+              <li>Parking: <span>{{ property.parking }} spots</span></li>
+              <li>Created: <span>{{ property.created }}</span></li>
             </ul>
             <div class="main-button">
               <a href="property-details.html">Schedule a visit</a>
