@@ -10,8 +10,16 @@ def index(request):
     context = {
         'properties': pr
     }
-
     return render(request, 'properties/index.html', context)
+
+
+def all_properties(request):
+    pr = Property.objects.all()
+
+    context = {
+        'properties': pr
+    }
+    return render(request, 'properties/all_properties.html', context)
 
 
 def details_property(request, pk):

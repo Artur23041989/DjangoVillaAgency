@@ -5,5 +5,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('details-property/<str:pk>/', views.details_property, name='details_property'),
     path('create-property/', views.create_property, name='create_property'),
-
+    path('all-properties', views.all_properties, name='all_properties'),
 ]
