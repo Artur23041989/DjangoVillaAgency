@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Property
 from .forms import PropertyForm
 
@@ -23,8 +23,15 @@ def details_property(request, pk):
 def create_property(request):
     form = PropertyForm()
 
+    if request.method == 'POST':
+        form = PropertyForm(request.POST, request.FILES)
+        if form.is_valid():
+            propert = form.save(commit=False)
+            form.save()
+            return redirect('index')
+
     context = {
         'form': form
     }
 
-    return render(request, 'form-template.html', context)
+    return render(request, 'properties/form-template.html', context)

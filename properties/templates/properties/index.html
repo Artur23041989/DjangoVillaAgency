@@ -276,10 +276,10 @@
         <div class="col-lg-4 col-md-6">
 
           <div class="item">
-            <a href="{% url 'details-property' property.id %}"><img src="{{ property.image.url }}" alt=""></a>
+            <a href="{% url 'details_property' property.id %}"><img src="{{ property.image.url }}" alt=""></a>
             <span class="category">{{ property.category }}</span>
             <h6>$ {{ property.price }}</h6>
-            <h4><a href="{% url 'details-property' property.id %}">{{ property.title }}</a></h4>
+            <h4><a href="{% url 'details_property' property.id %}">{{ property.title }}</a></h4>
             <ul>
               <li>Bedrooms: <span>{{ property.bedrooms }}</span></li>
               <li>Bathrooms: <span>{{ property.bathrooms }}</span></li>

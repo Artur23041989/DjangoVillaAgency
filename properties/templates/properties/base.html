@@ -22,7 +22,39 @@
     <link rel="stylesheet" href="{% static 'css/owl.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<style>
+.back-button-img {
+    width: 40px;
+    height: auto;
+    display: inline-block;
+    transition: transform 0.2s;
+}
 
+.back-button-img:hover {
+    transform: scale(1.1);
+}
+
+
+.btn.btn-primary {
+    background-color: #f35525;
+    border-color: #f35525;
+}
+.btn.btn-primary:hover {
+    background-color: #e74420; /* чуть темнее при наведении, по желанию */
+    border-color: #e74420;
+}
+
+
+.bg-light.p-4.rounded.shadow-sm {
+    background-color: #f35525;
+    border: 1px solid #f35525;
+}
+
+.mb-3 {
+
+}
+
+</style>
 </head>
 <body>
 {% include 'properties/navbar.html' %}
