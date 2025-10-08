@@ -14,12 +14,7 @@ def index(request):
 
 
 def all_properties(request):
-    pr = Property.objects.all()
-
-    context = {
-        'properties': pr
-    }
-    return render(request, 'properties/all_properties.html', context)
+    return render(request, 'properties/all_properties.html')
 
 
 def details_property(request, pk):
