@@ -58,7 +58,8 @@ def details_property(request, pk):
     return render(request,'properties/property-details.html', {'property':property_details})
 
 def about(request):
-    return render(request, 'properties/about.html')
+    reviews = Review.objects.all().order_by('-created_at')
+    return render(request, 'properties/about.html', {'reviews': reviews})
 
 
 
@@ -69,15 +70,15 @@ def add_review(request):
             review = form.save(commit=False)
             review.user = request.user
             review.save()
-            return redirect('reviews')  # Название страницы с отзывами
+            return redirect('about')  # Название страницы с отзывами
     else:
         form = ReviewForm()
     return render(request, 'properties/add_review.html', {'form': form})
 
 
-
-def reviews_list(request):
-    reviews = Review.objects.all().order_by('-created_at')
-    return render(request, 'properties/about.html', {'reviews': reviews})
-
+#
+# def reviews_list(request):
+#     reviews = Review.objects.all().order_by('-created_at')
+#     return render(request, 'properties/about.html', {'reviews': reviews})
+#
 

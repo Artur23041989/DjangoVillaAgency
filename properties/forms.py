@@ -8,10 +8,10 @@ class ReviewForm(forms.ModelForm):
         widgets = {
             'review_text': forms.Textarea(attrs={
                 'rows': 4,
-                'placeholder': 'Напишите ваш отзыв...',
+                'placeholder': 'Write your review...',
                 'class': 'form-control'
             }),
         }
         labels = {
-            'review_text': 'Ваш отзыв'
+            'review_text': 'Your review'
         }
