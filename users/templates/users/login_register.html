@@ -1,0 +1,73 @@
+{% extends 'properties/base.html'%}
+{% block content %}
+
+
+{% if page == 'register' %}
+<h2>Register</h2>
+<!--    <form method="post">-->
+<!--        {% csrf_token %}-->
+<!--        {{ form.as_p }}-->
+<!--        <button type="submit">Register</button>-->
+<!--    </form>-->
+        <form action="{% url 'register' %}" method="post" class="form auth__form">
+          <!-- Input:Text -->
+            {% csrf_token %}
+            {% for field in form %}
+          <div class="form__field">
+            <label for="formInput#text">{{ field.label }}</label>
+
+              {{ field }}
+
+              {% for error in field.errors %}
+                    <p style="color: red" >{{ error }}</p>
+              {% endfor %}
+
+          </div>
+            {% endfor %}
+            <button type="submit">Register</button>
+
+          <p>Already have an Account?</p>
+          <a href="{% url 'login' %}">Log In</a>
+
+        </form>
+
+
+{% else %}
+       <form action="{% url 'login' %}" method="post" class="form auth__form">
+  {% csrf_token %}
+  <!-- Input: Email -->
+  <div class="form__field">
+    <label for="formInput#text">Username:</label>
+    <input
+      class="input input--text"
+      id="formInput#text"
+      type="text"
+      name="username"
+      placeholder="Enter your username..."
+    />
+  </div>
+  <!-- Input: Password -->
+  <div class="form__field">
+    <label for="formInput#password">Password:</label>
+    <input
+      class="input input--password"
+      id="formInput#password"
+      type="password"
+      name="password"
+      placeholder="••••••••"
+    />
+  </div>
+  <!-- Кнопка входа -->
+  <div class="auth__actions">
+    <input class="btn btn--sub" type="submit" value="Log in" />
+  </div>
+  <!-- Альтернативный блок -->
+  <div class="auth__alternative">
+    <p>Don’t have an account?</p>
+    <a href="{% url 'register' %}">Sign Up</a>
+  </div>
+</form>
+
+{% endif %}
+
+{% endblock %}
